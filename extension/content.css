@@ -1,0 +1,175 @@
+#truthlens-badge {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 2147483647;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #0f0f1a;
+  border: 1px solid rgba(99,102,241,0.4);
+  border-radius: 50px;
+  padding: 8px 14px 8px 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.5), 0 0 0 1px rgba(99,102,241,0.1);
+  transition: all 0.2s ease;
+  user-select: none;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+#truthlens-badge:hover {
+  border-color: rgba(99,102,241,0.7);
+  box-shadow: 0 4px 28px rgba(99,102,241,0.25), 0 0 0 1px rgba(99,102,241,0.2);
+}
+#truthlens-badge .tl-icon {
+  width: 22px;
+  height: 22px;
+  background: #6366f1;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  color: white;
+  flex-shrink: 0;
+}
+#truthlens-badge .tl-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #e2e8f0;
+}
+#truthlens-badge .tl-status {
+  font-size: 11px;
+  color: #475569;
+}
+
+/* Overlay */
+#truthlens-overlay {
+  position: fixed;
+  bottom: 80px;
+  right: 24px;
+  z-index: 2147483647;
+  width: 340px;
+  background: #0d0d1a;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  overflow: hidden;
+  animation: tl-slide-up 0.2s ease;
+}
+@keyframes tl-slide-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+#truthlens-overlay .tl-ov-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+#truthlens-overlay .tl-ov-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: #94a3b8;
+}
+#truthlens-overlay .tl-ov-close {
+  width: 20px;
+  height: 20px;
+  background: rgba(255,255,255,0.06);
+  border: none;
+  border-radius: 50%;
+  color: #64748b;
+  font-size: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+#truthlens-overlay .tl-ov-body {
+  padding: 14px;
+}
+#truthlens-overlay .tl-verdict-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+#truthlens-overlay .tl-verdict-badge {
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1;
+}
+#truthlens-overlay .tl-verdict-name {
+  font-size: 16px;
+  font-weight: 700;
+}
+#truthlens-overlay .tl-verdict-sub {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  opacity: 0.6;
+  margin-bottom: 2px;
+}
+#truthlens-overlay .tl-summary {
+  font-size: 11px;
+  color: #94a3b8;
+  line-height: 1.55;
+  margin-bottom: 10px;
+}
+#truthlens-overlay .tl-score-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: #475569;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+#truthlens-overlay .tl-score-track {
+  height: 3px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+#truthlens-overlay .tl-score-fill {
+  height: 100%;
+  border-radius: 3px;
+}
+#truthlens-overlay .tl-open-btn {
+  width: 100%;
+  padding: 8px;
+  background: rgba(99,102,241,0.1);
+  border: 1px solid rgba(99,102,241,0.2);
+  border-radius: 8px;
+  color: #818cf8;
+  font-size: 11px;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: center;
+}
+#truthlens-overlay .tl-open-btn:hover {
+  background: rgba(99,102,241,0.18);
+}
+#truthlens-overlay .tl-loading {
+  text-align: center;
+  padding: 20px;
+  color: #475569;
+  font-size: 12px;
+}
+#truthlens-overlay .tl-spinner {
+  width: 24px;
+  height: 24px;
+  border: 2px solid rgba(99,102,241,0.2);
+  border-top-color: #6366f1;
+  border-radius: 50%;
+  animation: tl-spin 0.7s linear infinite;
+  margin: 0 auto 8px;
+}
+@keyframes tl-spin { to { transform: rotate(360deg); } }
