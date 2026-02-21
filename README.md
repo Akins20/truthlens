@@ -24,7 +24,7 @@
 ### 1. Clone the repo
 
 ```bash
-git clone https://github.com/your-username/truthlens.git
+git clone https://github.com/Akins20/truthlens.git
 cd truthlens
 ```
 
