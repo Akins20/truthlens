@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useCallback } from "react";
-import { Search, FileText, Link2, Image, ArrowRight, RotateCcw, Upload } from "lucide-react";
+import { Search, FileText, Link2, Image, ArrowRight, RotateCcw, Upload, Download } from "lucide-react";
 import AnalysisResult from "@/components/AnalysisResult";
 import { AnalysisResponse } from "@/types";
 
@@ -332,7 +332,46 @@ export default function Home() {
           <AnalysisResult result={result} onReset={handleReset} />
         )}
 
-        <footer className="mt-20 pt-8" style={{ borderTop: "1px solid rgba(255,255,255,0.04)" }}>
+        {/* Extension install section */}
+        {!result && !loading && (
+          <div className="mt-20 rounded-xl p-6" style={{ border: "1px solid rgba(255,255,255,0.06)", background: "#0f0f1a" }}>
+            <div className="flex items-start justify-between gap-6 flex-wrap">
+              <div>
+                <p className="text-sm font-semibold text-white mb-1">Chrome Extension</p>
+                <p className="text-xs leading-relaxed max-w-sm" style={{ color: "#475569" }}>
+                  Fact-check any article without leaving the page. A badge appears on news sites and social media — click to analyze instantly.
+                </p>
+                <div className="flex items-center gap-4 mt-4 flex-wrap">
+                  <a
+                    href="/truthlens-extension.zip"
+                    download
+                    className="flex items-center gap-2 text-xs px-4 py-2 rounded-lg font-medium transition-all"
+                    style={{ background: "#6366f1", color: "#fff" }}
+                  >
+                    <Download size={13} /> Download Extension
+                  </a>
+                  <a
+                    href="https://github.com/Akins20/truthlens"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs transition-colors"
+                    style={{ color: "#334155" }}
+                  >
+                    View source on GitHub
+                  </a>
+                </div>
+              </div>
+              <ol className="text-xs space-y-1.5" style={{ color: "#475569" }}>
+                <li><span style={{ color: "#334155" }}>1.</span> Download and unzip the file</li>
+                <li><span style={{ color: "#334155" }}>2.</span> Open Chrome and go to <span style={{ color: "#94a3b8" }}>chrome://extensions</span></li>
+                <li><span style={{ color: "#334155" }}>3.</span> Enable Developer mode, click Load unpacked</li>
+                <li><span style={{ color: "#334155" }}>4.</span> Select the unzipped folder</li>
+              </ol>
+            </div>
+          </div>
+        )}
+
+        <footer className="mt-8 pt-8" style={{ borderTop: "1px solid rgba(255,255,255,0.04)" }}>
           <p className="text-xs" style={{ color: "#1e293b" }}>
             Powered by Gemini 2.5 Flash · Google Search grounding · Always verify with primary sources
           </p>

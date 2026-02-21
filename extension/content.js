@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3000/api/analyze";
+const API_URL = "https://truthlens-roan-omega.vercel.app/api/analyze";
 
 const VERDICT_STYLES = {
   True:            { icon: "✓", color: "#4ade80", bg: "rgba(74,222,128,0.08)",  border: "rgba(74,222,128,0.2)"  },
@@ -120,7 +120,7 @@ async function analyzeAndRender(overlay) {
     if (body) {
       body.innerHTML = `
         <p style="color:#f87171;font-size:12px;padding:8px 0">${err.message}</p>
-        <button class="tl-open-btn" onclick="window.open('http://localhost:3000')">Open TruthLens ↗</button>
+        <button class="tl-open-btn" onclick="window.open('https://truthlens-roan-omega.vercel.app')">Open TruthLens ↗</button>
       `;
     }
   }
@@ -151,7 +151,7 @@ function renderOverlayResult(overlay, { analysis, sources }) {
   `;
 
   overlay.querySelector("#tl-open").addEventListener("click", () => {
-    window.open("http://localhost:3000", "_blank");
+    window.open("https://truthlens-roan-omega.vercel.app", "_blank");
   });
 }
 

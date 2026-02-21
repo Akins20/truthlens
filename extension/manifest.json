@@ -5,9 +5,9 @@
   "description": "Real-time AI fact-checking for any webpage — powered by Gemini",
   "permissions": ["activeTab", "scripting", "storage"],
   "host_permissions": [
+    "https://truthlens-roan-omega.vercel.app/*",
     "http://localhost:3000/*",
-    "http://localhost:3001/*",
-    "https://*.vercel.app/*"
+    "http://localhost:3001/*"
   ],
   "action": {
     "default_popup": "popup.html",

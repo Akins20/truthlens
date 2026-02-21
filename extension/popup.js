@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3000/api/analyze";
+const API_URL = "https://truthlens-roan-omega.vercel.app/api/analyze";
 
 const VERDICT_STYLES = {
   True:           { icon: "✓",  color: "#4ade80", bg: "rgba(74,222,128,0.08)",  border: "rgba(74,222,128,0.2)"  },
@@ -161,6 +161,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   });
 
   document.getElementById("open-full-btn").addEventListener("click", () => {
-    chrome.tabs.create({ url: "http://localhost:3000" });
+    chrome.tabs.create({ url: "https://truthlens-roan-omega.vercel.app" });
   });
 });
